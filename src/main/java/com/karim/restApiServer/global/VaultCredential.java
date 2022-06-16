@@ -12,4 +12,5 @@ import lombok.Data;
 public class VaultCredential {
     private String username;
     private String password;
+
 }

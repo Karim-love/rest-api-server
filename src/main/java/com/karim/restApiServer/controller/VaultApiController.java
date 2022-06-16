@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class VaultApiController {
     @GetMapping(path = "/vault")
     public String get() {
-        String user = VaultTemplateInstance.getInstance().get("user");
-        String auth = VaultTemplateInstance.getInstance().get("auth");
+        String user = VaultTemplateInstance.getInstance().get("user") != null ? VaultTemplateInstance.getInstance().get("user") : "";
+        String auth = VaultTemplateInstance.getInstance().get("auth")!= null ? VaultTemplateInstance.getInstance().get("auth") : "";
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("user", user);
         jsonObject.addProperty("auth", auth);

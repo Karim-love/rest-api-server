@@ -61,11 +61,16 @@ public class VaultApiService extends AbstractVaultConfiguration {
         VaultTemplate vaultTemplate = new VaultTemplate(vaultEndpoint(), clientAuthentication());
         VaultVersionedKeyValueTemplate vaultVersionedKeyValueTemplate;
         vaultVersionedKeyValueTemplate = new VaultVersionedKeyValueTemplate(vaultTemplate, vaultProperties.getMainPath());
-        Versioned<VaultCredential> vaultResponse = vaultVersionedKeyValueTemplate.get("/" + vaultProperties.getSubPath(), VaultCredential.class);
 
-        if (vaultResponse != null){
-            VaultTemplateInstance.getInstance().put("user",vaultResponse.getData().getUsername());
-            VaultTemplateInstance.getInstance().put("auth",vaultResponse.getData().getPassword());
+        try {
+            Versioned<VaultCredential> vaultResponse = vaultVersionedKeyValueTemplate.get("/" + vaultProperties.getSubPath(), VaultCredential.class);
+
+            if (vaultResponse != null){
+                VaultTemplateInstance.getInstance().put("user",vaultResponse.getData().getUsername());
+                VaultTemplateInstance.getInstance().put("auth",vaultResponse.getData().getPassword());
+            }
+        }catch (Exception e){
+            System.out.println(e);
         }
     }
 }
