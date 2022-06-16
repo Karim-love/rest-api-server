@@ -7,6 +7,19 @@ spring boot : 2.6.1
 ## ❓ spring Boot 동작에 대한 기본 기능
 spring Boot 의 기본 동작을 공부하기 위해 간단한 api server 를 구현한 프로젝트 입니다.
 
+
+## ✔️기능별 정리
+<details close>
+<summary markdown="span"><b> 📌 설명</b></summary>
+<div markdown="1">
+
+### 1. vault
+- `/api/v1/vault` 요청 시 vault 서버에 있는 계정 정보를 전달한다.
+
+</div>
+</details>
+
+
 ## ✔️Pakage 별 정리
 <details close>
 <summary markdown="span"><b> 📌 설명</b></summary>
@@ -21,14 +34,17 @@ spring Boot 의 기본 동작을 공부하기 위해 간단한 api server 를 �
 ### 3. controller
 - 요청을 전담하는 컨트롤러 모음
 
-### 4. mapper
+### 4. maria
+#### 4-1. mapper
 - Mybatis 매핑 xml에 기재된 sql를 호출하기 위한 인터페이스 모음
+#### 4-2. vo
+- DB에서 조회한 정보등이 있는 vo 모음
 
 ### 5. service
 - 비즈니스 로직 수행 서비스 모음
 
-### 6. vo
-- DB에서 조회한 정보등이 있는 vo 모음
+### 6. global
+- Instance 및 Object 모음
 
 </div>
 </details>

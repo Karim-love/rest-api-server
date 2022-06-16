@@ -1,3 +1,8 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
 spring:
   datasource:
     url: "jdbc:mariadb://192.168.124.238:1222/restApiServer"
@@ -11,7 +16,11 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
-server:
-  port: 8080
-  servlet:
-    context-path: /
+vault.props:
+  schema: http
+  host: 192.168.124.238
+  port: 8200
+  roleId: 5b08421f-7f60-d528-dabb-1da487bbac08
+  secretId: ea01eddd-d199-461b-58f1-ba06957cc189
+  mainPath: fds
+  subPath: db_atomysql
