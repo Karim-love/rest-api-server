@@ -1,4 +1,3 @@
-
 # 📃 rest-api-server
 ```
 >> spring boot gradle version
@@ -6,7 +5,6 @@ spring boot : 2.6.1
 ```
 ## ❓ spring Boot 동작에 대한 기본 기능
 spring Boot 의 기본 동작을 공부하기 위해 간단한 api server 를 구현한 프로젝트 입니다.
-
 
 ## ✔️기능별 정리
 <details close>
