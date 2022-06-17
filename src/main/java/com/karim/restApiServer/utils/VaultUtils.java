@@ -1,16 +1,13 @@
-package com.karim.restApiServer.service;
+package com.karim.restApiServer.utils;
 
-import com.google.gson.JsonObject;
 import com.karim.restApiServer.configuration.VaultProps;
 import com.karim.restApiServer.global.VaultCredential;
 import com.karim.restApiServer.global.VaultTemplateInstance;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
 import org.springframework.vault.authentication.AppRoleAuthentication;
 import org.springframework.vault.authentication.AppRoleAuthenticationOptions;
 import org.springframework.vault.authentication.ClientAuthentication;
@@ -20,16 +17,10 @@ import org.springframework.vault.core.VaultTemplate;
 import org.springframework.vault.core.VaultVersionedKeyValueTemplate;
 import org.springframework.vault.support.Versioned;
 
-/**
- * packageName    : com.karim.restApiServer.service
- * author         : sblim
- * date           : 2022-06-16 오전 11:39
- * description    :
- */
 @Configuration
 @EnableConfigurationProperties(VaultProps.class)
 @RequiredArgsConstructor
-public class VaultApiService extends AbstractVaultConfiguration {
+public class VaultUtils extends AbstractVaultConfiguration {
 
     final private VaultProps vaultProperties;
 

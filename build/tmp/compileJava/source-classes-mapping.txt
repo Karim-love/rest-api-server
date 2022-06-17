@@ -8,7 +8,7 @@ com/karim/restApiServer/controller/VaultApiController.java
  com.karim.restApiServer.controller.VaultApiController
 com/karim/restApiServer/utils/CommonUtils.java
  com.karim.restApiServer.utils.CommonUtils
-com/karim/restApiServer/service/VaultApiService.java
- com.karim.restApiServer.service.VaultApiService
 com/karim/restApiServer/global/VaultCredential.java
  com.karim.restApiServer.global.VaultCredential
+com/karim/restApiServer/utils/VaultUtils.java
+ com.karim.restApiServer.utils.VaultUtils
