@@ -5,10 +5,10 @@ server:
 
 spring:
   datasource:
-    url: "jdbc:mariadb://127.0.0.1:3306/restApiServer"
+    url: "jdbc:mysql://127.0.0.1:3306/karim?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false"
     username: "karim"
     password: "karim"
-    driver-class-name: "org.mariadb.jdbc.Driver"
+    driver-class-name: "com.mysql.jdbc.Driver"
 
 mybatis:
   # mapper 경로 지정

@@ -1,6 +1,7 @@
 package com.karim.restApiServer.maria.mapper;
 
 
+import com.karim.restApiServer.maria.vo.UserVo;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -11,5 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 
 @Mapper
-public interface DBMapper {
+public interface UserMapper {
+    void setUser(UserVo userVo);
 }

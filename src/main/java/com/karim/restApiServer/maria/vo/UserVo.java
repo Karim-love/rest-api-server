@@ -10,5 +10,12 @@ import lombok.Data;
  */
 
 @Data
-public class DBVo {
+public class UserVo {
+    private int userNo;
+    private String userId;
+    private String userPw;
+    private String userName;
+    private String userAuth;
+    private String appendDate;
+    private String updateDate;
 }
