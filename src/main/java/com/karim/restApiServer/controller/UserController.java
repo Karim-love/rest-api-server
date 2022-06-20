@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
  * date           : 2022-06-16 오전 10:45
  * description    :
  */
-// curl -X POST http://127.0.0.1:8080/api/v2/setUser/tb_user?timeout=1 -d "{\"userId\":\"karim\",\"userPw\":\"karim\",\"userName\":\"카림\"}" -H "Content-Type:application/json;charset=UTF-8"
+// curl -X POST http://127.0.0.1:8080/api/v2/setUser/tb_user?timeout=1 -d "{"userId":"karim","userPw":"karim","userName":"카림"}" -H "Content-Type:application/json;charset=UTF-8"
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v2")

@@ -19,9 +19,9 @@ public class UserService {
 
     public void setUser(JsonObject jsonObject){
         UserVo userVo = new UserVo();
-        userVo.setUserId(jsonObject.get("userId") != null ? jsonObject.get("userId").toString() : "");
-        userVo.setUserPw(jsonObject.get("userPw") != null ? jsonObject.get("userPw").toString() : "");
-        userVo.setUserName(jsonObject.get("userName") != null ? jsonObject.get("userName").toString() : "");
+        userVo.setUserId(jsonObject.get("userId") != null ? jsonObject.get("userId").getAsString() : "");
+        userVo.setUserPw(jsonObject.get("userPw") != null ? jsonObject.get("userPw").getAsString() : "");
+        userVo.setUserName(jsonObject.get("userName") != null ? jsonObject.get("userName").getAsString() : "");
         userVo.setUserAuth("USER");
         userVo.setAppendDate(localTime);
         userVo.setUpdateDate(localTime);

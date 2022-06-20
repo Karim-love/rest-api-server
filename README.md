@@ -14,6 +14,11 @@ spring Boot 의 기본 동작을 공부하기 위해 간단한 api server 를 �
 ### 1. vault
 - `/api/v1/vault` 요청 시 vault 서버에 있는 계정 정보를 전달한다.
 
+### 2. postMapping
+- DB insert
+  + `/api/v2/Method/TableName/?timeout=1 -d "{"userId":"사용자Id","userPw":"사용자Pw","userName":"사용자Name"}"/`
+  + 요청 시 서버에 해당 body 정보를 저장한다.
+
 </div>
 </details>
 
