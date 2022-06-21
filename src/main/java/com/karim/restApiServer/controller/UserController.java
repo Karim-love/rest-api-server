@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 /**
  * packageName    : com.karim.restApiServer.controller
@@ -17,7 +16,7 @@ import java.util.List;
  * date           : 2022-06-16 오전 10:45
  * description    :
  */
-// curl -X POST http://127.0.0.1:8080/api/v2/tb_user/setUser?timeout=1 -d "{"userId":"karim","userPw":"karim","userName":"카림"}" -H "Content-Type:application/json;charset=UTF-8"
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v2")
@@ -25,6 +24,7 @@ public class UserController {
 
     private final UserService userService;
 
+    // curl -X POST http://127.0.0.1:8080/api/v2/tb_user/setUser?timeout=1 -d "{"userId":"karim","userPw":"karim","userName":"카림"}" -H "Content-Type:application/json;charset=UTF-8"
     @PostMapping(path = "/{table}/{method}/**", produces = "application/json;charset=UTF-8")
     public void post(@PathVariable("table") String tableName,
                      @PathVariable("method") String methodName,
@@ -42,15 +42,21 @@ public class UserController {
     }
 
     @GetMapping(path = "/{table}/{method}")
-    public void get(@PathVariable("table") String tableName,
-                    @PathVariable("method") String methodName,
-                    HttpServletRequest httpServletRequest,
-                    HttpSession httpSession){
+    public String String (@PathVariable("table") String tableName,
+                          @PathVariable("method") String methodName,
+                          HttpServletRequest httpServletRequest,
+                          HttpSession httpSession){
+
+        StringBuilder stringBuilder = new StringBuilder();
+
         if (methodName.equals("getUserAll")){
             if (tableName.equals("tb_user")){
-                // curl -X GET http://192.168.124.131:8080/api/v2/tb_user/getUserAll
-                userService.getUserAll();
+                // curl -X GET http://127.0.0.1:8080/api/v2/tb_user/getUserAll
+                for (UserVo value : userService.getUserAll()){
+                    stringBuilder.append(value).append("\n");
+                }
             }
         }
+        return stringBuilder.toString();
     }
 }
