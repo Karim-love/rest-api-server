@@ -1,5 +1,6 @@
 package com.karim.restApiServer.controller;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.karim.restApiServer.maria.vo.UserVo;
@@ -49,11 +50,21 @@ public class UserController {
 
         StringBuilder stringBuilder = new StringBuilder();
 
+        JsonObject jsonObject = new JsonObject();
+
         if (methodName.equals("getUserAll")){
             if (tableName.equals("tb_user")){
                 // curl -X GET http://127.0.0.1:8080/api/v2/tb_user/getUserAll
-                for (UserVo value : userService.getUserAll()){
-                    stringBuilder.append(value).append("\n");
+                for (UserVo userVo : userService.getUserAll()){
+                    jsonObject.addProperty("userNo", userVo.getUserNo());
+                    jsonObject.addProperty("userId", userVo.getUserId());
+                    jsonObject.addProperty("userPw", userVo.getUserPw());
+                    jsonObject.addProperty("userName", userVo.getUserName());
+                    jsonObject.addProperty("userAuth", userVo.getUserAuth());
+                    jsonObject.addProperty("appendTime", userVo.getAppendDate());
+                    jsonObject.addProperty("updateTime", userVo.getUpdateDate());
+
+                    stringBuilder.append(jsonObject).append("\n");
                 }
             }
         }
