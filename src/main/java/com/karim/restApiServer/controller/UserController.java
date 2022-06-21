@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping(path = "/{table}/{method}")
-    public String String (@PathVariable("table") String tableName,
+    public String get(@PathVariable("table") String tableName,
                           @PathVariable("method") String methodName,
                           HttpServletRequest httpServletRequest,
                           HttpSession httpSession){
