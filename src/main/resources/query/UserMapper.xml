@@ -10,14 +10,7 @@
     </insert>
 
     <select id="getUserAll" resultType="com.karim.restApiServer.maria.vo.UserVo">
-        SELECT
-        USER_NO,
-        USER_ID,
-        USER_PW,
-        USER_NAME,
-        USER_AUTH,
-        APPEND_DATE,
-        UPDATE_DATE
+        SELECT USER_NO, USER_ID, USER_PW, USER_NAME, USER_AUTH, APPEND_DATE, UPDATE_DATE
         FROM TB_USER;
     </select>
 </mapper>
