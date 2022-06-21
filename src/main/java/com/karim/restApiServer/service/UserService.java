@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -26,5 +27,9 @@ public class UserService {
         userVo.setAppendDate(localTime);
         userVo.setUpdateDate(localTime);
         userMapper.setUser(userVo);
+    }
+
+    public List<UserVo> getUserAll(){
+        return userMapper.getUserAll();
     }
 }

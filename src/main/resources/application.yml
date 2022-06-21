@@ -3,11 +3,18 @@ server:
   servlet:
     context-path: /
 
+#spring:
+#  datasource:
+#    url: "jdbc:mariadb://127.0.0.1/karim"
+#    username: "karim"
+#    password: "karim"
+#    driver-class-name: "org.mariadb.jdbc.Driver"
+
 spring:
   datasource:
-    url: "jdbc:mariadb://127.0.0.1/karim"
-    username: "karim"
-    password: "karim"
+    url: "jdbc:mariadb://192.168.124.238:1322/dfinder"
+    username: "dfinder"
+    password: "1q2w3e4r5T#"
     driver-class-name: "org.mariadb.jdbc.Driver"
 
 mybatis:
