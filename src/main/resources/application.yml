@@ -9,6 +9,10 @@ spring:
     username: "karim"
     password: "karim"
     driver-class-name: "org.mariadb.jdbc.Driver"
+  cache:
+    jcache:
+      config:
+        classpath: "ehcache.xml"
 
 #spring:
 #  datasource:

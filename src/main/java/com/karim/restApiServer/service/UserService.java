@@ -46,6 +46,7 @@ public class UserService {
      * */
     @Cacheable(value="karimCache", key="#id")
     public List<UserVo> getUserAllCache(String id){
+        System.out.println(id);
         return userMapper.getUserAllCache();
     }
 
