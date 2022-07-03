@@ -25,6 +25,17 @@ spring Boot 의 기본 동작을 공부하기 위해 간단한 api server 를 �
   + Method : getUserAll
   + 요청 시 서버에 해당 테이블 User 정보를 모두 조회한다.
 
+### 3. ehCache DB User table control 
+- ehCache DB user info select all
+  + `/api/v2/cache/TableName/getUserAll`
+  + Method : getUserAll
+  + 요청 시 서버에 해당 테이블 User 정보를 모두 조회 및 ehCache에 저장한다.
+  
+- ehCache DB user info clear all
+  + `/api/v2/cache/refresh`
+  + Method : refresh
+  + 요청 시 ehCache에 있는 데이터를 clear 한다.
+
 </div>
 </details>
 

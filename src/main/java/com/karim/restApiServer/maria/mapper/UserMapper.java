@@ -17,5 +17,4 @@ public interface UserMapper{
 
     List<UserVo> getUserAllNoCache();
     List<UserVo> getUserAllCache();
-    void refresh();
 }

@@ -42,6 +42,7 @@ public class UserService {
      * getUserAllCache("id") 를 호출하면 메소드가 한번 실행된 후에 리턴되는 List 가 karimCache 에 id 키에 캐쉬된다.
      * 다시 똑같은 파라메터로 karimCache("id") 호출하면 메소드가 실행되지 않고 karimCache 캐쉬에 있는 id 키를 찾아서 저장된 값을 리턴한다.
      * 참고예제 : https://stove99.github.io/java/2019/08/01/springboot-with-ehcache/
+     * 참고예제2 : https://jojoldu.tistory.com/57
      * */
     @Cacheable(value="karimCache", key="#id")
     public List<UserVo> getUserAllCache(String id){

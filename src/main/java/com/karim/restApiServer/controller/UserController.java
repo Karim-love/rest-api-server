@@ -60,7 +60,7 @@ public class UserController {
                 long start = System.currentTimeMillis(); // 수행시간 측정
                 List<UserVo> userVoList = userService.getUserAllNoCache();
                 long end = System.currentTimeMillis();
-                System.out.println("No Cache 수행시간 : "+ Long.toString(end-start));
+                System.out.println("No Cache 수행시간 : "+ (end-start));
                 for (UserVo userVo : userVoList){
                     jsonObject.addProperty("userNo", userVo.getUserNo());
                     jsonObject.addProperty("userId", userVo.getUserId());
@@ -92,7 +92,7 @@ public class UserController {
                 long start = System.currentTimeMillis(); // 수행시간 측정
                 List<UserVo> userVoList = userService.getUserAllCache("karim");
                 long end = System.currentTimeMillis();
-                System.out.println("Cache 수행시간 : "+ Long.toString(end-start));
+                System.out.println("Cache 수행시간 : "+ (end-start));
 
                 for (UserVo userVo : userVoList){
                     jsonObject.addProperty("userNo", userVo.getUserNo());
