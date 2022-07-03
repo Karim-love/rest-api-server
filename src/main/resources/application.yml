@@ -11,8 +11,7 @@ spring:
     driver-class-name: "org.mariadb.jdbc.Driver"
   cache:
     jcache:
-      config:
-        classpath: "ehcache.xml"
+      config: classpath:ehcache.xml
 
 #spring:
 #  datasource:
