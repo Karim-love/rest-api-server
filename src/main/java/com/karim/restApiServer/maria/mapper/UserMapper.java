@@ -1,6 +1,4 @@
 package com.karim.restApiServer.maria.mapper;
-
-
 import com.karim.restApiServer.maria.vo.UserVo;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -14,8 +12,10 @@ import java.util.List;
  */
 
 @Mapper
-public interface UserMapper {
+public interface UserMapper{
     void setUser(UserVo userVo);
 
-    List<UserVo> getUserAll();
+    List<UserVo> getUserAllNoCache();
+    List<UserVo> getUserAllCache();
+    void refresh();
 }
