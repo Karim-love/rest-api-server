@@ -32,7 +32,7 @@ public class UserService {
     }
 
     public List<UserVo> getUserAllNoCache(){
-        return userMapper.getUserAllNoCache();
+        return userMapper.getUserAll();
     }
 
 
@@ -47,7 +47,7 @@ public class UserService {
     @Cacheable(value="karimCache", key="#id")
     public List<UserVo> getUserAllCache(String id){
         System.out.println(id);
-        return userMapper.getUserAllCache();
+        return userMapper.getUserAll();
     }
 
     // @CacheEvict : 캐시를 지울 때 쓰는 어노테이션

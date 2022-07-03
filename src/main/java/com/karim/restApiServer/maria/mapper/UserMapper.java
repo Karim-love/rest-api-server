@@ -15,6 +15,6 @@ import java.util.List;
 public interface UserMapper{
     void setUser(UserVo userVo);
 
-    List<UserVo> getUserAllNoCache();
-    List<UserVo> getUserAllCache();
+    List<UserVo> getUserAll();
+
 }
