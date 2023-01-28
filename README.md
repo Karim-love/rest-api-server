@@ -54,13 +54,15 @@ spring Boot 의 기본 동작을 공부하기 위해 간단한 api server 를 �
 ### 3. controller
 - 요청을 전담하는 컨트롤러 모음
 
-### 4. maria
+### 4. repository
+- 
 #### 4-1. mapper
 - Mybatis 매핑 xml에 기재된 sql를 호출하기 위한 인터페이스 모음
-#### 4-2. vo
-- DB에서 조회한 정보등이 있는 vo 모음
 
-### 5. service
+### 5. domain
+- 정보등이 있는 vo 모음
+
+### 6. service
 - 비즈니스 로직 수행 서비스 모음
 
 ### 6. global

@@ -1,5 +1,5 @@
-package com.karim.restApiServer.maria.mapper;
-import com.karim.restApiServer.maria.vo.UserVo;
+package com.karim.restApiServer.repository.mapper;
+import com.karim.restApiServer.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -13,8 +13,8 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper{
-    void setUser(UserVo userVo);
+    void setUser(User user);
 
-    List<UserVo> getUserAll();
+    List<User> getUserAll();
 
 }

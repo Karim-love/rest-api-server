@@ -2,7 +2,7 @@ package com.karim.restApiServer.controller;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.karim.restApiServer.maria.vo.UserVo;
+import com.karim.restApiServer.domain.User;
 import com.karim.restApiServer.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.EnableCaching;
@@ -58,17 +58,17 @@ public class UserController {
             if (tableName.equals("tb_user")){
                 // curl -X GET http://127.0.0.1:8080/api/v2/tb_user/getUserAll
                 long start = System.currentTimeMillis(); // 수행시간 측정
-                List<UserVo> userVoList = userService.getUserAllNoCache();
+                List<User> userList = userService.getUserAllNoCache();
                 long end = System.currentTimeMillis();
                 System.out.println("No Cache 수행시간 : "+ (end-start));
-                for (UserVo userVo : userVoList){
-                    jsonObject.addProperty("userNo", userVo.getUserNo());
-                    jsonObject.addProperty("userId", userVo.getUserId());
-                    jsonObject.addProperty("userPw", userVo.getUserPw());
-                    jsonObject.addProperty("userName", userVo.getUserName());
-                    jsonObject.addProperty("userAuth", userVo.getUserAuth());
-                    jsonObject.addProperty("appendTime", userVo.getAppendDate());
-                    jsonObject.addProperty("updateTime", userVo.getUpdateDate());
+                for (User user : userList){
+                    jsonObject.addProperty("userNo", user.getUserNo());
+                    jsonObject.addProperty("userId", user.getUserId());
+                    jsonObject.addProperty("userPw", user.getUserPw());
+                    jsonObject.addProperty("userName", user.getUserName());
+                    jsonObject.addProperty("userAuth", user.getUserAuth());
+                    jsonObject.addProperty("appendTime", user.getAppendDate());
+                    jsonObject.addProperty("updateTime", user.getUpdateDate());
 
                     stringBuilder.append(jsonObject).append("\n");
                 }
@@ -90,18 +90,18 @@ public class UserController {
             if (tableName.equals("tb_user")){
                 // curl -X GET http://127.0.0.1:8080/api/v2/cache/tb_user/getUserAll
                 long start = System.currentTimeMillis(); // 수행시간 측정
-                List<UserVo> userVoList = userService.getUserAllCache("karim");
+                List<User> userList = userService.getUserAllCache("karim");
                 long end = System.currentTimeMillis();
                 System.out.println("Cache 수행시간 : "+ (end-start));
 
-                for (UserVo userVo : userVoList){
-                    jsonObject.addProperty("userNo", userVo.getUserNo());
-                    jsonObject.addProperty("userId", userVo.getUserId());
-                    jsonObject.addProperty("userPw", userVo.getUserPw());
-                    jsonObject.addProperty("userName", userVo.getUserName());
-                    jsonObject.addProperty("userAuth", userVo.getUserAuth());
-                    jsonObject.addProperty("appendTime", userVo.getAppendDate());
-                    jsonObject.addProperty("updateTime", userVo.getUpdateDate());
+                for (User user : userList){
+                    jsonObject.addProperty("userNo", user.getUserNo());
+                    jsonObject.addProperty("userId", user.getUserId());
+                    jsonObject.addProperty("userPw", user.getUserPw());
+                    jsonObject.addProperty("userName", user.getUserName());
+                    jsonObject.addProperty("userAuth", user.getUserAuth());
+                    jsonObject.addProperty("appendTime", user.getAppendDate());
+                    jsonObject.addProperty("updateTime", user.getUpdateDate());
 
                     stringBuilder.append(jsonObject).append("\n");
                 }

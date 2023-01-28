@@ -1,8 +1,8 @@
 package com.karim.restApiServer.service;
 
 import com.google.gson.JsonObject;
-import com.karim.restApiServer.maria.mapper.UserMapper;
-import com.karim.restApiServer.maria.vo.UserVo;
+import com.karim.restApiServer.repository.mapper.UserMapper;
+import com.karim.restApiServer.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -21,17 +21,17 @@ public class UserService {
     private final UserMapper userMapper;
 
     public void setUser(JsonObject jsonObject){
-        UserVo userVo = new UserVo();
-        userVo.setUserId(jsonObject.get("userId") != null ? jsonObject.get("userId").getAsString() : "");
-        userVo.setUserPw(jsonObject.get("userPw") != null ? jsonObject.get("userPw").getAsString() : "");
-        userVo.setUserName(jsonObject.get("userName") != null ? jsonObject.get("userName").getAsString() : "");
-        userVo.setUserAuth("USER");
-        userVo.setAppendDate(localTime);
-        userVo.setUpdateDate(localTime);
-        userMapper.setUser(userVo);
+        User user = new User();
+        user.setUserId(jsonObject.get("userId") != null ? jsonObject.get("userId").getAsString() : "");
+        user.setUserPw(jsonObject.get("userPw") != null ? jsonObject.get("userPw").getAsString() : "");
+        user.setUserName(jsonObject.get("userName") != null ? jsonObject.get("userName").getAsString() : "");
+        user.setUserAuth("USER");
+        user.setAppendDate(localTime);
+        user.setUpdateDate(localTime);
+        userMapper.setUser(user);
     }
 
-    public List<UserVo> getUserAllNoCache(){
+    public List<User> getUserAllNoCache(){
         return userMapper.getUserAll();
     }
 
@@ -45,7 +45,7 @@ public class UserService {
      * 참고예제2 : https://jojoldu.tistory.com/57
      * */
     @Cacheable(value="karimCache", key="#id")
-    public List<UserVo> getUserAllCache(String id){
+    public List<User> getUserAllCache(String id){
         System.out.println(id);
         return userMapper.getUserAll();
     }

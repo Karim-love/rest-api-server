@@ -1,4 +1,4 @@
-package com.karim.restApiServer.maria.vo;
+package com.karim.restApiServer.domain;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import lombok.Data;
  */
 
 @Data
-public class UserVo{
+public class User {
     private int userNo;
     private String userId;
     private String userPw;
