@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-class MemoryUserRepositoryTest {
+class MemoryMemberRepositoryTest {
 
-    UserRepository repository = new MemoryUserRepository();
+    MemberRepository repository = new MemoryMemberRepository();
 
     @Test
     @Disabled

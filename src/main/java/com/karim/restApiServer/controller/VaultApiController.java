@@ -18,6 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1")
 public class VaultApiController {
+
+    /**
+     * 기동 시 VaultTemplateInstance 인스턴스에 저장된
+     * user, auth를 조회한다.
+     * @return
+     */
     @GetMapping(path = "/vault")
     public String get() {
         String user = VaultTemplateInstance.getInstance().get("user") != null ? VaultTemplateInstance.getInstance().get("user") : "";

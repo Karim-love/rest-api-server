@@ -1,6 +1,7 @@
 package com.karim.restApiServer.repository;
 
 import com.karim.restApiServer.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * date           : 2023-01-28 오후 01:18
  * description    : 메모리에 사용자를 저장하고 조화하기 위한 구현체
  */
-public class MemoryUserRepository implements UserRepository{
+
+public class MemoryMemberRepository implements MemberRepository {
 
     private  static Map<Long, Member> store = new ConcurrentHashMap<>();
     private static long seqeunce = 0L;

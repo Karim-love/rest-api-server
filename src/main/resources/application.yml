@@ -10,15 +10,8 @@ spring:
     password: "karim"
     driver-class-name: "org.mariadb.jdbc.Driver"
   cache:
-    jcache:
+    cache:
       config: classpath:ehcache.xml
-
-#spring:
-#  datasource:
-#    url: "jdbc:mariadb://192.168.124.238:1322/dfinder"
-#    username: "dfinder"
-#    password: "1q2w3e4r5T#"
-#    driver-class-name: "org.mariadb.jdbc.Driver"
 
 mybatis:
   # mapper 경로 지정
@@ -28,7 +21,7 @@ mybatis:
 
 vault.props:
   schema: http
-  host: 192.168.124.238
+  host: 127.0.0.1
   port: 8200
   roleId: 5b08421f-7f60-d528-dabb-1da487bbac08
   secretId: ea01eddd-d199-461b-58f1-ba06957cc189

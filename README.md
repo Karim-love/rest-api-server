@@ -57,6 +57,7 @@ spring Boot 의 기본 동작을 공부하기 위해 간단한 api server 를 �
 ┃ ┃ ┗ 📜 비즈니스 로직 수행 서비스 모음
 ┃ ┣ 📂utils
 ┃ ┃ ┗ 📜 본 기능을 제공하는 부속 기능 및 유틸 모음
+┃ ┗ 📜 SpringConfig.java
 ┃ ┗ 📜 WebApplication.java
 ┗ 📂resources
 ┃ ┣ 📂query

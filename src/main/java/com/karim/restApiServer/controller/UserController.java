@@ -27,6 +27,15 @@ public class UserController {
 
     private final UserService userService;
 
+    /**
+     * 전달 받은 해당 테이블 및 메소드 정보로
+     * DB에 User를 등록한다.
+     * @param tableName
+     * @param methodName
+     * @param httpSession
+     * @param timeout
+     * @param body
+     */
     // curl -X POST http://127.0.0.1:8080/api/v2/tb_user/setUser?timeout=1 -d "{"userId":"karim","userPw":"karim","userName":"카림"}" -H "Content-Type:application/json;charset=UTF-8"
     @PostMapping(path = "/{table}/{method}/**", produces = "application/json;charset=UTF-8")
     public void post(@PathVariable("table") String tableName,
@@ -44,6 +53,15 @@ public class UserController {
         }
     }
 
+    /**
+     * 전달 받은 해당 테이블 및 메소드 정보로
+     * DB에서 전체 사용자를 검색한다.
+     * @param tableName
+     * @param methodName
+     * @param httpServletRequest
+     * @param httpSession
+     * @return
+     */
     @GetMapping(path = "/{table}/{method}")
     public String getUserAllNoCache(@PathVariable("table") String tableName,
                           @PathVariable("method") String methodName,
@@ -77,6 +95,15 @@ public class UserController {
         return stringBuilder.toString();
     }
 
+    /**
+     * 전달 받은 해당 테이블 및 메소드 정보로
+     * ehCache에서 전체 사용자를 검색한다.
+     * @param tableName
+     * @param methodName
+     * @param httpServletRequest
+     * @param httpSession
+     * @return
+     */
     @GetMapping(path = "/cache/{table}/{method}")
     public String getUserAllCache(@PathVariable("table") String tableName,
                       @PathVariable("method") String methodName,
@@ -110,6 +137,10 @@ public class UserController {
         return stringBuilder.toString();
     }
 
+    /**
+     * ehCache refresh
+     * @return
+     */
     @GetMapping(path = "/cache/refresh")
     @ResponseBody
     public String refresh(){
