@@ -41,6 +41,8 @@ spring Boot 의 기본 동작을 공부하기 위해 간단한 api server 를 �
 ```bash
 📦src
 ┗ 📂restApiServer
+┃ ┣ 📂aop
+┃ ┃ ┗ 📜 AOP 기능 모음
 ┃ ┣ 📂configuration
 ┃ ┃ ┗ 📜 Spring 설정이 있는 pkg
 ┃ ┣ 📂controller
